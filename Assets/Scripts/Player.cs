@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+
+    // configuration parameters
     [SerializeField] float moveSpeed = 10f;
     [SerializeField] float padding = 1f;
+    [SerializeField] GameObject laserPrefab;
+    [SerializeField] float projectileSpeed = 10f;
 
     private float minX;
     private float maxX;
@@ -23,6 +27,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
+        Fire();
        
     }
 
@@ -54,5 +59,17 @@ public class Player : MonoBehaviour
 
         minY = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + padding;
         maxY = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - padding;
+    }
+
+    private void Fire()
+    {
+        if(Input.GetButtonDown("Fire1"))
+        {
+            GameObject laser = Instantiate(
+                laserPrefab,
+                transform.position,
+                Quaternion.identity) as GameObject;
+            laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0, projectileSpeed);
+        }
     }
 }
