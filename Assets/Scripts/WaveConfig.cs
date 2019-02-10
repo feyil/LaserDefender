@@ -17,9 +17,14 @@ public class WaveConfig : ScriptableObject // Look there not MonoBehaviour
         return enemyPrefab;
     }
 
-    public GameObject GetPathPrefab()
+    public List<Transform> GetWaypoints()
     {
-        return pathPrefab;
+        List<Transform> waveWayPoints = new List<Transform>();
+        foreach(Transform child in pathPrefab.transform)
+        {
+            waveWayPoints.Add(child);
+        }
+        return waveWayPoints;
     }
 
     public float GetTimeBetweenSpawns()
