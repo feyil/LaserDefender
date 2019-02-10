@@ -6,7 +6,7 @@ public class EnemyPathing : MonoBehaviour
 {
     [SerializeField] WaveConfig waveConfig;
     List<Transform> waypoints;
-    [SerializeField] float moveSpeed = 2f;
+    float moveSpeed;
 
     int waypointIndex = 0;
 
@@ -14,6 +14,7 @@ public class EnemyPathing : MonoBehaviour
     void Start()
     {
         waypoints = waveConfig.GetWaypoints();
+        moveSpeed = waveConfig.GetMoveSpeed();
         // Locate enemy to its initial position
         transform.position = waypoints[waypointIndex].transform.position;
     }
