@@ -14,13 +14,14 @@ public class Player : MonoBehaviour
     void Update()
     {
         Move();
+       
     }
 
     private void Move()
     {
-        var deltaX = Input.GetAxis("Horizontal");
+        // making frame rate independent for different devices
+        var deltaX = Input.GetAxis("Horizontal") * Time.deltaTime; 
         var newXPos = transform.position.x + deltaX;
-
         transform.position = new Vector2(newXPos, transform.position.y);
     }
 }
