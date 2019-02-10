@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] float moveSpeed = 10f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,9 +21,18 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
+
+        // Horizontal Movement
         // making frame rate independent for different devices
-        var deltaX = Input.GetAxis("Horizontal") * Time.deltaTime; 
+        var deltaX = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed; 
         var newXPos = transform.position.x + deltaX;
-        transform.position = new Vector2(newXPos, transform.position.y);
+
+        // Vertical Movement
+        var deltaY = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
+        var newYPos = transform.position.y + deltaY;
+
+        transform.position = new Vector2(newXPos, newYPos);
+
+       
     }
 }
