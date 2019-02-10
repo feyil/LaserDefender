@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 10f;
+    [SerializeField] float padding = 1f;
 
     private float minX;
     private float maxX;
@@ -48,10 +49,10 @@ public class Player : MonoBehaviour
     private void SetUpMoveBoundaries()
     {
         Camera gameCamera = Camera.main;
-        minX = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x;
-        maxX = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x;
+        minX = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).x + padding;
+        maxX = gameCamera.ViewportToWorldPoint(new Vector3(1, 0, 0)).x - padding;
 
-        minY = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y;
-        maxY = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y;
+        minY = gameCamera.ViewportToWorldPoint(new Vector3(0, 0, 0)).y + padding;
+        maxY = gameCamera.ViewportToWorldPoint(new Vector3(0, 1, 0)).y - padding;
     }
 }
