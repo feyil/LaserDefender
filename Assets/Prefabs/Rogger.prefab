@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1065922853482267372}
   - component: {fileID: 1065922853482267373}
   - component: {fileID: 3871856124707382061}
+  - component: {fileID: 2405640113137980956}
+  - component: {fileID: 6508609505506491089}
   m_Layer: 0
   m_Name: Rogger
   m_TagString: Untagged
@@ -92,3 +94,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0668bef4823a164dba2877d36269441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2405640113137980956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065922853482267374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d10477d1cb4944048bc4a2aa0e508dfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+--- !u!58 &6508609505506491089
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065922853482267374}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.465
