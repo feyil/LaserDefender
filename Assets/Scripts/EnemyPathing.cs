@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class EnemyPathing : MonoBehaviour
 {
-    [SerializeField] WaveConfig waveConfig;
+    WaveConfig waveConfig;
     List<Transform> waypoints;
-    float moveSpeed;
-
     int waypointIndex = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         waypoints = waveConfig.GetWaypoints();
-        moveSpeed = waveConfig.GetMoveSpeed();
         // Locate enemy to its initial position
         transform.position = waypoints[waypointIndex].transform.position;
     }
@@ -31,7 +28,7 @@ public class EnemyPathing : MonoBehaviour
         {
             var targetPosition = waypoints[waypointIndex].transform.position;
             // Frame rate indepedency
-            var movementThisFrame = moveSpeed * Time.deltaTime;
+            var movementThisFrame = waveConfig.GetMoveSpeed() * Time.deltaTime;
             transform.position = Vector2.MoveTowards
                 (transform.position, targetPosition, movementThisFrame);
 
@@ -44,5 +41,10 @@ public class EnemyPathing : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void SetWaveConfig(WaveConfig waveConfig)
+    {
+        this.waveConfig = waveConfig;
     }
 }
