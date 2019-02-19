@@ -16,6 +16,7 @@ public class Level : MonoBehaviour
     {
         // it can cause errors string reference
         SceneManager.LoadScene("Game");
+        FindObjectOfType<GameSession>().ResetGame();
     }
 
     public void LoadGameOver()
