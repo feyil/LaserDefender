@@ -5,4 +5,6 @@ It was created following a Unity Tutorial. I have tried to understand how a game
 
 ![](https://github.com/feyil/LaserDefender/blob/master/Screenshots/Laser%20Defender%20Mobile%204.png=360x640)
 
+<img src="https://github.com/feyil/LaserDefender/blob/master/Screenshots/Laser%20Defender%20Mobile%204.png" alt="drawing" width="200"/>
+
 
