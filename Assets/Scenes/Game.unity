@@ -783,7 +783,12 @@ PrefabInstance:
       propertyPath: m_FontData.m_Alignment
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1997777124, guid: 17993ba72d8acd249a2c006b0bc8e51e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1997777124, guid: 17993ba72d8acd249a2c006b0bc8e51e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 17993ba72d8acd249a2c006b0bc8e51e, type: 3}
 --- !u!1001 &6099958111280901810
 PrefabInstance:
