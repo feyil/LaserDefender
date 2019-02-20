@@ -14,3 +14,29 @@ It was created following a Unity Tutorial. I have tried to understand how a game
 <img src="https://github.com/feyil/LaserDefender/blob/master/Screenshots/Laser%20Defender%20Mobile%203.png" alt="pic1" width="200"/>
 
 
+<div class="row">
+  <div class="column">
+    <img src="https://github.com/feyil/LaserDefender/blob/master/Screenshots/Laser%20Defender%20Mobile%203.png" alt="Snow" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="https://github.com/feyil/LaserDefender/blob/master/Screenshots/Laser%20Defender%20Mobile%203.png" alt="Forest" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="https://github.com/feyil/LaserDefender/blob/master/Screenshots/Laser%20Defender%20Mobile%203.png" alt="Mountains" style="width:100%">
+  </div>
+</div>
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
