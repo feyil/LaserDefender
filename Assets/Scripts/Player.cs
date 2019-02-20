@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
     {
         Move();
         Fire();
+        Movement();
        
     }
 
@@ -75,6 +76,22 @@ public class Player : MonoBehaviour
 
     private void Fire()
     {
+        // Mobile device control
+        if(SystemInfo.deviceType == DeviceType.Handheld)
+        {
+            foreach(var touch in Input.touches)
+            {
+                if (touch.phase == TouchPhase.Began)
+                {
+                    firingCoroutine = StartCoroutine(FireContinuously());
+                }
+                if (touch.phase == TouchPhase.Ended)
+                {
+                    StopCoroutine(firingCoroutine);
+                }
+            }
+        }
+
         if(Input.GetButtonDown("Fire1"))
         {
             firingCoroutine = StartCoroutine(FireContinuously());
@@ -143,5 +160,20 @@ public class Player : MonoBehaviour
     public int GetHealth()
     {
         return health;
+    }
+
+    private void Movement()
+    {
+        var dir = Vector3.zero;
+
+       // dir.y = -Input.acceleration.y;
+        dir.x = Input.acceleration.x;
+
+        if (dir.sqrMagnitude > 1)
+            dir.Normalize();
+
+        dir *= 40 * Time.deltaTime;
+
+        transform.Translate(dir);
     }
 }

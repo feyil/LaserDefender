@@ -8,7 +8,7 @@ public class CameraAspect : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Screen.SetResolution(360, 640, false);
+      //  Screen.SetResolution(360, 640, false);
     }
 
 
